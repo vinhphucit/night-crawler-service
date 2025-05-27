@@ -23,5 +23,6 @@ public class NightCrawlerApplication {
         // Create and start the web crawler service
         WebCrawlerService crawlerService = new WebCrawlerService();
         crawlerService.startCrawling(websites);
+        logger.info("NightCrawler Service started");
     }
 } 

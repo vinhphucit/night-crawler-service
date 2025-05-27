@@ -18,6 +18,7 @@ public class WebCrawlerService {
     private static final int TIMEOUT_MS = 10000;
 
     public WebCrawlerService() {
+        logger.info("Initializing WebCrawlerService");
         this.executorService = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
     }
 
@@ -51,8 +52,9 @@ public class WebCrawlerService {
 
             // Extract and process data from the website
             String title = doc.title();
+            logger.info("Title: {}", title);
             String description = doc.select("meta[name=description]").attr("content");
-            
+            logger.info("Description: {}", description);
             logger.info("Successfully crawled {} - Title: {}", url, title);
             // TODO: Add your data processing logic here
             // For example, you might want to:
